@@ -1,0 +1,6 @@
+{
+  "name": "DevStore - Vitrine de Apps, Sites e Sistemas",
+  "description": "Plataforma profissional de compra e venda de aplicativos, sites, sistemas SaaS e códigos-fonte prontos com entrega direta e autorização via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
