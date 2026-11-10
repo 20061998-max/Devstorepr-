@@ -109,8 +109,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onClose }) => {
       originalPrice: prod.originalPrice || prod.price * 1.4,
       imageUrl: prod.imageUrl,
       hiddenDownloadLink: prod.hiddenDownloadLink,
-      techStack: prod.techStack.join(', '),
-      features: prod.features.join('\n'),
+      techStack: (prod.techStack || []).join(', '),
+      features: (prod.features || []).join('\n'),
       demoUrl: prod.demoUrl || '',
       isAvailable: prod.isAvailable
     });
@@ -226,7 +226,7 @@ Para resgatar seu código-fonte:
     (p) =>
       p.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       p.categoryLabel.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      p.techStack.some((t) => t.toLowerCase().includes(searchTerm.toLowerCase()))
+      (p.techStack || []).some((t) => t.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   return (

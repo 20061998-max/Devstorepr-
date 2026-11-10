@@ -37,10 +37,10 @@ const StoreContent: React.FC = () => {
       searchQuery.trim() === '' ||
       product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.shortDescription.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.techStack.some((tech) =>
+      (product.techStack || []).some((tech) =>
         tech.toLowerCase().includes(searchQuery.toLowerCase())
       ) ||
-      product.categoryLabel.toLowerCase().includes(searchQuery.toLowerCase());
+      (product.categoryLabel || '').toLowerCase().includes(searchQuery.toLowerCase());
 
     return matchesCategory && matchesSearch;
   });

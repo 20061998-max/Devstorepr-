@@ -71,9 +71,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           {/* Tech Stack Unboxed Metadata */}
           <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-2 overflow-hidden text-ellipsis whitespace-nowrap">
             <Code2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-            <span>{product.techStack.slice(0, 3).join(' · ')}</span>
-            {product.techStack.length > 3 && (
-              <span className="text-slate-500">+{product.techStack.length - 3}</span>
+            <span>{(product.techStack || []).slice(0, 3).join(' · ')}</span>
+            {(product.techStack || []).length > 3 && (
+              <span className="text-slate-500">+{(product.techStack || []).length - 3}</span>
             )}
           </div>
 
@@ -92,7 +92,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
           {/* Key Bullet Highlights */}
           <ul className="space-y-1 mb-4 text-[12px] text-slate-300">
-            {product.features.slice(0, 2).map((feat, idx) => (
+            {(product.features || []).slice(0, 2).map((feat, idx) => (
               <li key={idx} className="flex items-center gap-1.5 truncate">
                 <Check className="w-3 h-3 text-cyan-400 shrink-0" />
                 <span className="truncate">{feat}</span>

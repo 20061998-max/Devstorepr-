@@ -71,7 +71,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               Tecnologias Utilizadas
             </span>
             <div className="flex flex-wrap gap-2">
-              {product.techStack.map((tech, idx) => (
+              {(product.techStack || []).map((tech, idx) => (
                 <span
                   key={idx}
                   className="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-800/90 text-slate-200 border border-slate-700/60"
@@ -98,7 +98,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               O que está incluso no pacote
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {product.features.map((feat, idx) => (
+              {(product.features || []).map((feat, idx) => (
                 <div
                   key={idx}
                   className="flex items-start gap-2.5 p-2.5 rounded-lg bg-slate-950/60 border border-slate-800 text-xs text-slate-300"
